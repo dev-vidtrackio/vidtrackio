@@ -1,32 +1,29 @@
 Options -Indexes
 Options -MultiViews
 Options +FollowSymlinks
-AllowOverride None
 AddDefaultCharset UTF-8
 ServerSignature Off
 FileETag none
 
-<Files ".htaccess">
-    Order allow,deny
-    Deny from all
-<Files>
-<Files ".gitattributes">
-    Order allow,deny
-    Deny from all
-<Files>
-<Files "CREDITS">
-    Order allow,deny
-    Deny from all
-<Files>
-<Files "LICENSE">
-    Order allow,deny
-    Deny from all
-<Files>
-<Files "README.md">
-    Order allow,deny
-    Deny from all
-<Files>
+RedirectMatch 403 /\.git.*
 
-<Directory ".git">
-    Require all denied
-</Directory>
+<Files ".htaccess">
+Order allow,deny
+Deny from all
+</Files>
+<Files ".gitattributes">
+Order allow,deny
+Deny from all
+</Files>
+<Files "LICENSE">
+Order allow,deny
+Deny from all
+</Files>
+<Files "CREDITS">
+Order allow,deny
+Deny from all
+</Files>
+<Files "README.md">
+Order allow,deny
+Deny from all
+</Files>
